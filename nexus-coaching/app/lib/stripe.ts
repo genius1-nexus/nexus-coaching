@@ -1,6 +1,10 @@
-import Stripe from 'stripe'
-
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '')
+/**
+ * Sample data used by the public pages (/ , /packages, /coaches).
+ *
+ * Important: don't initialize the Stripe SDK in this module at import time.
+ * Next.js evaluates server modules during build ("Collecting page data"), and
+ * Vercel builds may not have STRIPE_SECRET_KEY set for preview builds.
+ */
 
 // Package pricing in CHF
 export const packages = [
